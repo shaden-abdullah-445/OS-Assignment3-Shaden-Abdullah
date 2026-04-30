@@ -76,6 +76,13 @@ class SharedResources {
     public static void incrementCompletedProcess() {
         // TODO: Protect this critical section with a lock
             // Method to increment completed process counter
+         completedProcessLock.lock();
+        try {
+            completedProcessCount++;
+        } finally {
+            completedProcessLock.unlock();
+        }
+
     public static void incrementCompletedProcess() {
         completedProcessLock.lock();
         try {
