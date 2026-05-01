@@ -45,16 +45,12 @@ Document your development process with **minimum 3 entries** showing progression
 
 ---
 
-### Entry 3 - [Date, Time]
-**What I implemented**: 
-
-**Challenges encountered**: 
-
-**How I solved it**: 
-
-**Testing approach**: 
-
-**Time spent**: 
+### Entry 3 - [2026-04-29, 11:30]
+- What I implemented: Task 2 – ReentrantLock for the execution log (ArrayList).
+- - Challenges encountered: Initially forgot to unlock in finally block.
+  - - How I solved it: Corrected to lock/unlock inside try-finally.
+    - - Testing approach: Added heavy logging; never saw ConcurrentModificationException.
+- - Time spent: 45 min
 
 ---
 
