@@ -31,16 +31,12 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [Date, Time]
-**What I implemented**: 
-
-**Challenges encountered**: 
-
-**How I solved it**: 
-
-**Testing approach**: 
-
-**Time spent**: 
+### Entry 1 - [2026-04-29, 10:30]
+- What I implemented: Set up the repository, changed student ID, made first commit.
+ - Challenges encountered: None – straightforward setup.
+ - How I solved it: Followed the VS Code cloning steps.
+ - Testing approach: Compiled and ran the original unsynchronized code to see the race con ditions (inconsistent log counts).
+ - Time spent: 30 min
 
 ---
 
