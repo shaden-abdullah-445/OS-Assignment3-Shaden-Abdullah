@@ -90,7 +90,8 @@ Document your development process with **minimum 3 entries** showing progression
 
 **Your Answer**:
 
-[Your answer here - 4-6 sentences with code examples]
+[- **First race condition** – `contextSwitchCount++` (and the other counters).  Shared resource: the integer counters.  Problem: `++` is not atomic; two threads can read the same value, increment, and write back, causing a lost update.  Incorrect behaviour: The final counter value is less than the actual number of incremen ts.
+- **Second race condition** – `executionLog.add(message)`.  Shared resource: `ArrayList<String>`.  Problem: `ArrayList` is not thread-safe; concurrent `add()` calls can corrupt internal structure, throw `ConcurrentModificationException`, or lose entries.  Incorrect behaviour: Program may crash or log entries may disappear.]
 
 ---
 
