@@ -174,35 +174,16 @@ Purpose: Simulate a single‑core CPU – only one process can execute at a time
 ---
 
 ### Test 2: Exception Testing
-**What I tested**: Checking for ConcurrentModificationException
-
-**Testing procedure**: 
-
-**Results**: 
-
-**What this proves**: 
+Procedure: Added a loop that ran the program 20 times. Results: No ConcurrentModificationException or any other exception occurred. What this proves: The logLock successfully serialises access to the ArrayList , making it thread‑safe.
 
 ---
 
 ### Test 3: Correctness Verification
-**What I tested**: Verifying correct final values (total burst time, context switches, etc.)
-
-**Expected values**: 
-
-**Actual values**: 
-
-**Analysis**: 
-
+Expected: completedProcessCount should equal number of processes created; total waiting time should be consistent with per‑process waiting times. Actual: All values matched the manual calculation (checked with print statements). Analysis: The synchronisation does not change the logical behaviour – it only ensures correctness under concurrency.
 ---
 
 ### Test 4: Different Scenarios
-**Scenario tested**: [e.g., different time quantum, more processes, etc.]
-
-**Purpose**: 
-
-**Results**: 
-
-**What I learned**: 
+Scenario: Changed Semaphore(1) to Semaphore(2) temporarily. Purpose: Observe effect of allowing two concurrent processes. Results: With 2 permits, execution overlapped (interleaving in output). Still no race conditions because counters remained protected. What I learned: Semaphores are extremely flexible – they control the degree of concurrency without changing the core logic.
 
 ---
 
