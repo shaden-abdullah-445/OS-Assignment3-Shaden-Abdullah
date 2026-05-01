@@ -100,7 +100,7 @@ Document your development process with **minimum 3 entries** showing progression
 
 **Your Answer**:
 
-[Your answer here - explain your implementation choices]
+[- **ReentrantLock** is a mutual exclusion lock (binary). It guarantees that only one thre ad holds the lock at a time. I used it for the counters and the log because those resourc es require exclusive access.- **Semaphore** maintains a set of permits. A binary semaphore (permits = 1) acts like a lock, but semaphores can also allow N concurrent accesses (e.g., a connection pool). I us ed a `Semaphore(1)` to limit CPU execution – only one process can run at any moment, exac tly matching a single-core CPU.]
 
 ---
 
