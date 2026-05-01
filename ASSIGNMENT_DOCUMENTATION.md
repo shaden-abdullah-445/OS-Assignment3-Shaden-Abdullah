@@ -109,7 +109,7 @@ Document your development process with **minimum 3 entries** showing progression
 
 **Your Answer**:
 
-[Your answer here - reference try-finally blocks, lock ordering, etc.]
+[- **Deadlock** occurs when two or more threads wait forever for each other’s locked resou rces.- Prevention techniques I used: 1. **Lock ordering** – I never acquire more than one lock at a time, so cyclic wait can not happen. 2. **try-finally blocks** – Every `lock()` or `acquire()` is followed by a `finally` block that releases the resource. This guarantees release even if an exception occurs, prev enting resource leaks.- Additionally, the semaphore is acquired at the very beginning of the critical section a nd released immediately after, so there is no nested locking.]
 
 ---
 
