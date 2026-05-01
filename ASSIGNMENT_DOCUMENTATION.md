@@ -122,7 +122,7 @@ Document your development process with **minimum 3 entries** showing progression
 
 **Your Answer**:
 
-[Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
+[- I chose **fine-grained locking** – three separate `ReentrantLock`s, one per counter (`c ontextSwitchLock`, `completedProcessLock`, `waitingTimeLock`).- **Why:** The three counters are completely independent (updating one does not depend on the others). With a single coarse-grained lock, threads updating different counters would still block each other, creating unnecessary contention. Fine-grained locking allows true parallelism: while one thread increments `contextSwitchCount`, another can simultaneously increment `completedProcessCount`.- **Trade-offs:** Fine-grained requires more code and careful reasoning, but for independ ent resources the concurrency gain is worth it. Coarse-grained is simpler but reduces thr oughput.- Because the counters are independent, fine-grained locking provides **better concurrenc y** – it exactly follows the principle: protect each shared resource with its own lock..]
 
 ---
 
