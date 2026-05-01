@@ -191,7 +191,7 @@ Scenario: Changed Semaphore(1) to Semaphore(2) temporarily. Purpose: Observe eff
 
 ### What I learned about synchronization:
 
-[6-8 sentences about key concepts, challenges, insights]
+[Race conditions are subtle: the code can run correctly many times and then suddenly fail. Synchronisation makes concurrent programs predictable. Fine‑grained locking is powerful: protecting independent resources with separate locks unlocks real parallelism. The try-finally pattern is non‑negotiable – forgetting to unlock in a finally block leads to deadlocks that are very hard to debug. A binary semaphore ( Semaphore(1) ) is functionally similar to a mutex, but a mutex (ReentrantLock) is usually preferred for mutual exclusion because it provides ownership and reentrancy. Synchronisation adds overhead, but the safety it buys is essential for any multithreaded program.]
 
 ---
 
@@ -199,44 +199,43 @@ Scenario: Changed Semaphore(1) to Semaphore(2) temporarily. Purpose: Observe eff
 
 Give TWO examples where synchronization is critical:
 
-**Example 1**: 
-
-**Example 2**: 
+1. Banking systems – When multiple tellers update the same account balance, locks prevent lost deposits or withdrawals.
+2.  Print spooler – A semaphore with a limit equal to the number of printers controls access to physical printers.
 
 ---
 
 ### How I would explain synchronization to others:
 
-[Explain to someone who just finished Assignment 1 - use simple terms and analogies]
+[“Imagine a shared whiteboard where many students want to write. If two write at the same time, their notes become unreadable. A mutex lock is like giving the marker to only one student at a time. A semaphore is like having a few markers – it lets a limited number of students write together. Without these rules, the whiteboard would be a mess. Thatʼs exactly what synchronisation does for shared data in a program.”]
 
 ---
 
 ## Part 6: GitHub Repository Information
 
-**Repository URL**: 
+**Repository URL**: https://github.com/shaden-abdullah-445/OS-Assignment3-Shaden-Abdullah.git
 
-**Number of commits**: 
+**Number of commits**: 6 (all meaningful, spread over 5 days)
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. Set my student ID: 445052024
+2.   Task 1 (445052024): Added fine-grained ReentrantLock for counters 3. Task 2 (445052024): Added ReentrantLock for execution log 4.
+3.   Task 3 (445052024): Implemented Semaphore for CPU control 5.
+4.   Task 4 (445052024): Completed comprehensive documentation 6. Final cleanup and verification of synchronisation. 
 
 ---
 
 ## Summary
 
-**Total time spent on assignment**: 
+**Total time spent on assignment**: ~5.5 hours
 
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. Fine‑grained locking improves performance for independent resources.
+2.  try-finally is the only safe way to release locks.
+ 3. A semaphore can control both mutual exclusion and resource limits. 
 
-**Most challenging aspect**: 
+**Most challenging aspect**: Deciding on lock granularity and proving that separate locks are safe (no deadlock because locks are never nested).
 
-**What I'm most proud of**: 
+**What I'm most proud of**: The final program runs deterministically, with no exceptions, and the code clearly shows why each synchronisation mechanism is used.
 
 ---
 
