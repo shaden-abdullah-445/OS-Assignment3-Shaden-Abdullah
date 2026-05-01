@@ -130,33 +130,14 @@ Document your development process with **minimum 3 entries** showing progression
 
 ### Critical Section #1: Counter Variables
 
-**Which variables**: 
-
-**Why they need protection**: 
-
-**Synchronization mechanism used**: 
-
-**Code snippet**:
-```java
-// Paste your implementation here
-```
+- Which variables: `contextSwitchCount`, `completedProcessCount`, `totalWaitingTime`- Why protection: The read-modify-write operations (increment, addition) are not atomic; without locks, updates can be lost.- Mechanism: Three separate `ReentrantLock`s (fine-grained)- Code snippet: ```java public static void incrementContextSwitch() { contextSwitchLock.lock(); try { contextSwitchCount++; } finally { contextSwitchLock.unlock(); }
 
 **Justification**: 
 
 ---
 
 ### Critical Section #2: Execution Log
-
-**What resource**: 
-
-**Why it needs protection**: 
-
-**Synchronization mechanism used**: 
-
-**Code snippet**:
-```java
-// Paste your implementation here
-```
+Resource: List<String> executionLog Why protection: ArrayList is not thread‑safe; concurrent add() calls cause corruption or exceptions.Mechanism: ReentrantLock logLock Code snippet: java public static void logExecution(String message) { logLock.lock(); try { executionLog.add(message); } finally { logLock.unlock(); } }
 
 **Justification**: 
 
@@ -164,15 +145,8 @@ Document your development process with **minimum 3 entries** showing progression
 
 ### Critical Section #3: CPU Semaphore
 
-**Purpose of semaphore**: 
-
-**Number of permits and why**: 
-
-**Where implemented**: 
-
-**Code snippet**:
-```java
-// Paste your implementation here
+Purpose: Simulate a single‑core CPU – only one process can execute at a time. Number of permits: 1 (binary semaphore) Implemented in
+: Process.run() and Process.runToCompletion() Code snippet (inside run() ): java SharedResources.cpuSemaphore.acquire(); try { // ... execution code ... } finally { SharedResources.cpuSemaphore.release(); }
 ```
 
 **Effect on program behavior**: 
