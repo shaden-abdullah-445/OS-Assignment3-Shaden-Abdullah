@@ -1,8 +1,8 @@
 # Assignment 3 - Complete Documentation
 
-**Student Name**: [Your Full Name]  
-**Student ID**: [Your ID]  
-**Date Submitted**: [Submission Date]
+**Student Name**: [shaden abdulaah aldosry]  
+**Student ID**: [445052024]  
+**Date Submitted**: [2026-05-2]
 
 ---
 
@@ -14,9 +14,9 @@
 > Set sharing to "Anyone with the link can view".
 > Test the link in incognito/private mode before submitting.
 
-**Video Link**: [Paste your personal Gmail Google Drive link here]
+**Video Link**: [[Paste your personal Gmail Google Drive link here](https://drive.google.com/file/d/1zFEsEJkihyJmM4aDTJwl0alVf-eZyprC/view?usp=drivesdk)]
 
-**Video filename**: `[YourStudentID]_Assignment3_Synchronization.mp4`
+**Video filename**: `[445052024_Assignment3_Synchronization.mp4]
 
 **Verification**:
 - [ ] Link is accessible (tested in incognito mode)
